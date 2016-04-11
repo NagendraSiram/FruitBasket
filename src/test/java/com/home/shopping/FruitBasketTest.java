@@ -54,4 +54,13 @@ public class FruitBasketTest {
         assertEquals("Total cost didn't match", expectedTotalCost, fruitBasket.calculateCost());
     }
 
+    @Test
+    public void calculateCostInCaseOfDuplicateItemsInBasket(){
+        fruitBasket.addItem(new Item("Bananas", 1.50));
+        fruitBasket.addItem(new Item("Bananas", 1.50));
+
+        double expectedTotalCost = 3.00;
+        assertEquals("Total cost didn't match", expectedTotalCost, fruitBasket.calculateCost());
+    }
+
 }
